@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class RepositoryTableViewCell: UITableViewCell {
 
@@ -28,14 +29,14 @@ class RepositoryTableViewCell: UITableViewCell {
 
     }
 
-    func prepare(model: Repository){
+    func prepare(model: Repository) {
         nameLabel.text = model.name
         detailsLabel.text = model.description
         starsLabel.text = String(model.stargazersCount)
         forksLabel.text = String(model.forks)
-        avatarImageView.image = nil
+        let url = URL(string: model.ownerAvatarUrl)
+        avatarImageView.kf.setImage(with: url)
         usernameLabel.text = model.ownerLogin
-
     }
     
 }

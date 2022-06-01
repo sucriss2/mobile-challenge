@@ -8,11 +8,12 @@
 import Foundation
 import UIKit
 
-struct Owner: Decodable {
+struct Owner: Codable {
     var avatarUrl: String
     var login: String
 }
 
+#if DEBUG
 extension Owner {
     static func fixture(
         avatarUrl: String = "https://avatars.githubusercontent.com/u/20487725?v=4",
@@ -24,5 +25,5 @@ extension Owner {
         )
     }
 }
-
+#endif
 

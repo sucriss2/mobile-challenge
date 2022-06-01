@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Repository: Decodable {
+struct Repository: Codable {
     var name: String
     var description: String
     var stargazersCount: Int
@@ -25,6 +25,7 @@ extension Repository {
     }
 }
 
+#if DEBUG
 extension Repository {
     static func fixture(
         name: String = "Maria",
@@ -42,5 +43,5 @@ extension Repository {
         )
     }
 }
-
+#endif
 

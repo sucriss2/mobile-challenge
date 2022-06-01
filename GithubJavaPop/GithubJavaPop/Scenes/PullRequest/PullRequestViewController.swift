@@ -9,11 +9,8 @@ import UIKit
 
 class PullRequestViewController: UITableViewController {
 
-    @IBOutlet weak var pullRequestTitle: UILabel!
-    @IBOutlet weak var pullRequestBody: UILabel!
-    @IBOutlet weak var authorAvatar: UIImageView!
-    @IBOutlet weak var authorUser: UILabel!
-    @IBOutlet weak var authorName: UILabel!
+    @IBOutlet weak var namePullRequestLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

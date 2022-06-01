@@ -16,6 +16,9 @@
 		8C805BA3283D1CAE00962026 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C805BA2283D1CAE00962026 /* Repository.swift */; };
 		8C805BA5283D325D00962026 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C805BA4283D325D00962026 /* RepositoryTableViewCell.swift */; };
 		8CB0B5FC283E6EA700C455B5 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB0B5FB283E6EA700C455B5 /* Owner.swift */; };
+		8CBBA932284691A2004412A7 /* REST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBA931284691A2004412A7 /* REST.swift */; };
+		8CBBA9562847DF1A004412A7 /* RepositoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBA9552847DF1A004412A7 /* RepositoryResponse.swift */; };
+		8CBBA95B2847FB7F004412A7 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8CBBA95A2847FB7F004412A7 /* Kingfisher */; };
 		8CF0EAD6283BC52E005716D3 /* PullRequestStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF0EAD5283BC52E005716D3 /* PullRequestStoryboard.storyboard */; };
 		8CF0EAD8283BC5AD005716D3 /* PullRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0EAD7283BC5AD005716D3 /* PullRequestViewController.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +35,8 @@
 		8C805BA2283D1CAE00962026 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		8C805BA4283D325D00962026 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		8CB0B5FB283E6EA700C455B5 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
+		8CBBA931284691A2004412A7 /* REST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REST.swift; sourceTree = "<group>"; };
+		8CBBA9552847DF1A004412A7 /* RepositoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryResponse.swift; sourceTree = "<group>"; };
 		8CF0EAD5283BC52E005716D3 /* PullRequestStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PullRequestStoryboard.storyboard; sourceTree = "<group>"; };
 		8CF0EAD7283BC5AD005716D3 /* PullRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -41,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CBBA95B2847FB7F004412A7 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +76,7 @@
 				8C41B7A0283BBF28008085F4 /* AppDelegate.swift */,
 				8C805BAA283D572600962026 /* Scenes */,
 				8C805BA7283D4D3B00962026 /* Models */,
+				8CBBA9302846915C004412A7 /* Networking */,
 				8C805BA9283D4D5F00962026 /* Files */,
 				8C41B7A9283BBF28008085F4 /* Assets.xcassets */,
 				8C41B7AE283BBF28008085F4 /* Info.plist */,
@@ -89,6 +96,7 @@
 		8C805BA7283D4D3B00962026 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8CBBA9552847DF1A004412A7 /* RepositoryResponse.swift */,
 				8C805BA2283D1CAE00962026 /* Repository.swift */,
 				8CB0B5FB283E6EA700C455B5 /* Owner.swift */,
 			);
@@ -122,6 +130,14 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
+		8CBBA9302846915C004412A7 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				8CBBA931284691A2004412A7 /* REST.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +154,9 @@
 			dependencies = (
 			);
 			name = GithubJavaPop;
+			packageProductDependencies = (
+				8CBBA95A2847FB7F004412A7 /* Kingfisher */,
+			);
 			productName = GithubJavaPop;
 			productReference = 8C41B79D283BBF28008085F4 /* GithubJavaPop.app */;
 			productType = "com.apple.product-type.application";
@@ -166,6 +185,9 @@
 				Base,
 			);
 			mainGroup = 8C41B794283BBF28008085F4;
+			packageReferences = (
+				8CBBA9592847FB7F004412A7 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 8C41B79E283BBF28008085F4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -197,6 +219,8 @@
 				8CF0EAD8283BC5AD005716D3 /* PullRequestViewController.swift in Sources */,
 				8C41B7A5283BBF28008085F4 /* RepositoryViewController.swift in Sources */,
 				8CB0B5FC283E6EA700C455B5 /* Owner.swift in Sources */,
+				8CBBA932284691A2004412A7 /* REST.swift in Sources */,
+				8CBBA9562847DF1A004412A7 /* RepositoryResponse.swift in Sources */,
 				8C805BA3283D1CAE00962026 /* Repository.swift in Sources */,
 				8C41B7A1283BBF28008085F4 /* AppDelegate.swift in Sources */,
 				8C41B7A3283BBF28008085F4 /* SceneDelegate.swift in Sources */,
@@ -420,6 +444,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8CBBA9592847FB7F004412A7 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8CBBA95A2847FB7F004412A7 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CBBA9592847FB7F004412A7 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8C41B795283BBF28008085F4 /* Project object */;
 }
