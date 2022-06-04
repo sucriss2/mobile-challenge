@@ -4,39 +4,47 @@ import Foundation
 
 var greeting = "Hello, playground"
 
-struct REST {
-    static func fetchRepository(onComplete: @escaping (Data?) -> Void) {
-        if let url = URL(string: "https://api.github.com/search/repositories?q=language:Java&sort=stars&page=1"){
-            URLSession.shared.dataTask(with: url) { data, response, error in
-                if let data = data {
-                    do{
-                        
-                        print(data)
-                        onComplete(data)
-                        //let res = try JSONDecoder().decode([Repository].self, from: data)
-                        
-                        JSONDecoder().decode(, from: data)
-                        //onComplete(res)
-                    } catch let error {
-                        print(error.localizedDescription)
-                        onComplete(nil)
-                    }
-                }
-            }.resume()
-        }
-        
-        
-    }
-}
+//struct REST {
+//    static func fetchRepository(onComplete: @escaping (Data?) -> Void) {
+//        if let url = URL(string: "https://api.github.com/search/repositories?q=language:Java&sort=stars&page=1"){
+//            URLSession.shared.dataTask(with: url) { data, response, error in
+//                if let data = data {
+//                    do{
+//
+//                        print(data)
+//                        onComplete(data)
+//                        //let res = try JSONDecoder().decode([Repository].self, from: data)
+//
+//                        JSONDecoder().decode(, from: data)
+//                        //onComplete(res)
+//                    } catch let error {
+//                        print(error.localizedDescription)
+//                        onComplete(nil)
+//                    }
+//                }
+//            }.resume()
+//        }
+//
+//
+//    }
+//}
+//
+//
+//REST.fetchRepository { data in
+//    guard let data = data else {
+//        return
+//    }
+//    let str = String(decoding: data, as: UTF8.self)
+//    print(str)
+//}
+//
+//
+//PlaygroundPage.current.needsIndefiniteExecution = true
+ 
+var basePath = "https://api.github.com"
+var ownerLogin = "login"
+var name = "repositorio"
 
+let path = basePath + "/repos/" + ownerLogin + "/" + name + "/pulls"
 
-REST.fetchRepository { data in
-    guard let data = data else {
-        return
-    }
-    let str = String(decoding: data, as: UTF8.self)
-    print(str)
-}
-
-
-PlaygroundPage.current.needsIndefiniteExecution = true
+print(path)

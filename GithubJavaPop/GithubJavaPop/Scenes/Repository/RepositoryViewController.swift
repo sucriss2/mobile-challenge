@@ -23,20 +23,28 @@ class RepositoryViewController: UIViewController {
                 self?.repositories = repositories.items
                 self?.tableView.reloadData()
             }
-           
         }
         
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        REST.loadRepository { (repositories) in
-//
-//            self.repositories = repositories
-//            self.tableView.reloadData()
-//        }
+ 
+    
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let vc = segue.destination as! WorldCupViewController
+//        let worldCup = worldCups[tableView.indexPathForSelectedRow!.row]
+//        vc.worldCup = worldCup
 //    }
-
+    
+    
+    @IBAction func showPullRequest(_ sender: UIBarButtonItem) {
+        let pullRequestStoryboard = UIStoryboard.init(name: "PullRequestStoryboard", bundle: nil)
+        guard let pullRequestViewController = pullRequestStoryboard.instantiateViewController(withIdentifier: PullRequestViewController.identifier) as? PullRequestViewController else {
+            fatalError()
+        }
+        present(pullRequestViewController, animated: true, completion: nil)
+    }
+    
 }
 
 extension RepositoryViewController: UITableViewDataSource {
@@ -61,6 +69,14 @@ extension RepositoryViewController: UITableViewDataSource {
     
     
 }
+
+//extension RepositoryViewController: PullRequestViewControllerDelegate {
+//    func showPr(pull: [PullRequest]) {
+//        print(pull)
+//    }
+//    
+//    
+//}
 
 //private func mockRepositories() -> [Repository] {
 //    return [

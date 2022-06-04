@@ -8,11 +8,11 @@
 import Foundation
 
 struct Repository: Codable {
-    var name: String
-    var description: String
-    var stargazersCount: Int
-    var forks: Int
-    var owner: Owner
+    let name: String
+    let description: String
+    let stargazersCount: Int
+    let forks: Int
+    let owner: Owner
 }
 
 extension Repository {

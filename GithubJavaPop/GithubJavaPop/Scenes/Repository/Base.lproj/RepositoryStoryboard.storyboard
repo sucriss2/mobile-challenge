@@ -11,7 +11,7 @@
         <!--Repository View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RepositoryViewController" customModule="GithubJavaPop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Reposity" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="RepositoryViewController" customModule="GithubJavaPop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m5S-v5-wUo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -148,7 +148,11 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Github JavaPop" id="rqF-Jz-0kT">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" id="xN5-kK-lUP"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Item" id="xN5-kK-lUP">
+                                            <connections>
+                                                <action selector="showPullRequest:" destination="BYZ-38-t0r" id="wSB-A1-gYB"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

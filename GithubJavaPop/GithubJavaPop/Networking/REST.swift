@@ -10,7 +10,7 @@ import UIKit
 
 struct REST {
    
-    private static let basePath = "https://api.github.com/search/repositories?q=language:Java&sort=stars&page=1"
+    private static let basePath = "https://api.github.com"
     
     private static let configuration: URLSessionConfiguration = {
         let config = URLSessionConfiguration.default
@@ -23,15 +23,12 @@ struct REST {
     private static let session = URLSession(configuration: configuration)
     
     static func loadRepository(onComplete: @escaping (RepositoryResponse) -> Void) {
-        guard let url = URL(string: basePath) else { return }
-        
+        let path = basePath + "/search/repositories?q=language:Java&sort=stars&page=1"
+        guard let url = URL(string: path) else { return }
         let dataTask = session.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
-            
             if error == nil {
-
                 guard let response = response as? HTTPURLResponse else {return}
                 if response.statusCode == 200 {
-
                     guard let data = data else {return}
                     do {
                         let decoder = JSONDecoder()
@@ -41,40 +38,44 @@ struct REST {
                     } catch {
                         print(error.localizedDescription)
                     }
-
                 } else {
                     print("Algum status inválido pelo servidor!!")
                 }
-
             } else {
                 print(error!)
             }
-            
         }
         dataTask.resume()
     }
+
+    static func fetchPullRequest(owner: String, repository: String, onComplete: @escaping ([PullRequest]) -> Void) {
+        let path = basePath + "/repos/" + owner + "/" + repository + "/pulls"
+        guard let url = URL(string: path) else { return }
+        let dataTask = session.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
+            if error == nil {
+                guard let response = response as? HTTPURLResponse else { return }
+                if response.statusCode == 200 {
+                    guard let data = data else { return }
+                    do{
+                        let decoder = JSONDecoder()
+                        decoder.keyDecodingStrategy = .convertFromSnakeCase
+                        let pullRequest = try decoder.decode([PullRequest].self, from: data)
+                        onComplete(pullRequest)
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                } else {
+                    print("Algo errado no servidor!!")
+                }
+            } else {
+                print(error!)
+            }
+        }
+        dataTask.resume()
+    }
+
     
+   
     
-    
-//    static func fetchRepository(onComplete: @escaping ([Repository]?) -> Void) {
-//        if let url = URL(string: "https://api.github.com/search/repositories?q=language:Java&sort=stars&page=1") {
-//            URLSession.shared.dataTask(with: url) { data, response, error in
-//                if let data = data {
-//                    do{
-//                        let res = try JSONDecoder().decode([Repository].self, from: data)
-//                        print("res: \(res)")
-//                        onComplete(res)
-//
-//                    } catch let error {
-//                        print(error.localizedDescription)
-//                        onComplete(nil)
-//                    }
-//                }
-//            }
-//            .resume()
-//        }
-//    }
-//}
-//REST.fetchRepository { data in
-//    guard let r
 }
+ 

@@ -21,6 +21,8 @@
 		8CBBA95B2847FB7F004412A7 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8CBBA95A2847FB7F004412A7 /* Kingfisher */; };
 		8CF0EAD6283BC52E005716D3 /* PullRequestStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF0EAD5283BC52E005716D3 /* PullRequestStoryboard.storyboard */; };
 		8CF0EAD8283BC5AD005716D3 /* PullRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0EAD7283BC5AD005716D3 /* PullRequestViewController.swift */; };
+		8CFE7A432849018D00D201CC /* PullRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFE7A422849018D00D201CC /* PullRequestTableViewCell.swift */; };
+		8CFE7A4528490D4100D201CC /* PullRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFE7A4428490D4100D201CC /* PullRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		8CBBA9552847DF1A004412A7 /* RepositoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryResponse.swift; sourceTree = "<group>"; };
 		8CF0EAD5283BC52E005716D3 /* PullRequestStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PullRequestStoryboard.storyboard; sourceTree = "<group>"; };
 		8CF0EAD7283BC5AD005716D3 /* PullRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestViewController.swift; sourceTree = "<group>"; };
+		8CFE7A422849018D00D201CC /* PullRequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestTableViewCell.swift; sourceTree = "<group>"; };
+		8CFE7A4428490D4100D201CC /* PullRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				8CF0EAD5283BC52E005716D3 /* PullRequestStoryboard.storyboard */,
+				8CFE7A422849018D00D201CC /* PullRequestTableViewCell.swift */,
 				8CF0EAD7283BC5AD005716D3 /* PullRequestViewController.swift */,
 			);
 			path = PullRequest;
@@ -96,6 +101,7 @@
 		8C805BA7283D4D3B00962026 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8CFE7A4428490D4100D201CC /* PullRequest.swift */,
 				8CBBA9552847DF1A004412A7 /* RepositoryResponse.swift */,
 				8C805BA2283D1CAE00962026 /* Repository.swift */,
 				8CB0B5FB283E6EA700C455B5 /* Owner.swift */,
@@ -222,6 +228,8 @@
 				8CBBA932284691A2004412A7 /* REST.swift in Sources */,
 				8CBBA9562847DF1A004412A7 /* RepositoryResponse.swift in Sources */,
 				8C805BA3283D1CAE00962026 /* Repository.swift in Sources */,
+				8CFE7A4528490D4100D201CC /* PullRequest.swift in Sources */,
+				8CFE7A432849018D00D201CC /* PullRequestTableViewCell.swift in Sources */,
 				8C41B7A1283BBF28008085F4 /* AppDelegate.swift in Sources */,
 				8C41B7A3283BBF28008085F4 /* SceneDelegate.swift in Sources */,
 				8C805BA5283D325D00962026 /* RepositoryTableViewCell.swift in Sources */,
