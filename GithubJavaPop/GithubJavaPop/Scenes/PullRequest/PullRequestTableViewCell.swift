@@ -14,9 +14,7 @@ class PullRequestTableViewCell: UITableViewCell {
     @IBOutlet weak var avatarUserImageView: UIImageView!
     @IBOutlet weak var loginUserLabel: UILabel!
     @IBOutlet weak var createdPullLabel: UILabel!
-    
-    
-    
+       
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

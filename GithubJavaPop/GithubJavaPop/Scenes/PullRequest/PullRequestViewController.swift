@@ -6,10 +6,7 @@
 //
 
 import UIKit
-
-//protocol PullRequestViewControllerDelegate: AnyObject {
-//    func showPr(pull: [PullRequest])
-//}
+import SafariServices
 
 class PullRequestViewController: UIViewController {
 
@@ -17,18 +14,24 @@ class PullRequestViewController: UIViewController {
     
     static let identifier = "PullRequestViewController"
     
-    var pullRequest: [PullRequest] = []
-   // weak var delegate: PullRequestViewControllerDelegate?
+    private var pullRequest: [PullRequest] = []
+    var ownerName: String = ""
+    var repositoryName: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //tableViewPullRequest.reloadData()
-        pullRequest = mockPullRequest()
+        //print("\(ownerName), \(repositoryName)")
+        //pullRequest = mockPullRequest()
+        tableViewPullRequest.delegate = self
         tableViewPullRequest.dataSource = self
-
-        // Do any additional setup after loading the view.
+        
+        REST.fetchPullRequest(owner: ownerName, repository: repositoryName) { (pullRequest) in
+            DispatchQueue.main.async { [weak self] in
+                self?.pullRequest = pullRequest
+                self?.tableViewPullRequest.reloadData()
+            }
+        }
     }
-    
 
 }
 
@@ -47,21 +50,29 @@ extension PullRequestViewController: UITableViewDataSource {
             fatalError()
         }
         let pulls = pullRequest[indexPath.row]
+        
+        cell.selectionStyle = .none
         cell.prepare(model: pulls)
         return cell
     }
-        
-    
 }
 
-private func mockPullRequest() -> [PullRequest] {
-    return [
-        .fixture(),
-        .fixture(title: "skhfauhkbf", body: "kjshhsdrbalgfuabkjsfgkalgslfjhbaslgfigwoqoufoitruioghbtgdvuc gbbfnsdvpyhrgjs v vhawoiyrowqgfougabsfhovihqefha", createdAt: "bsjgfuiss", user: Owner.fixture()),
-        .fixture(),
-        .fixture(),
-        .fixture(),
-        .fixture()
-    ]
-    
+extension PullRequestViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let URL = URL(string: pullRequest[indexPath.row].htmlUrl) else {
+            return
+        }
+        
+        let pullRequestViewController = SFSafariViewController(url: URL)
+        navigationController?.pushViewController(pullRequestViewController, animated: true)
+        print(pullRequest[indexPath.row].htmlUrl)
+    }
 }
+
+//private func mockPullRequest() -> [PullRequest] {
+//    return [
+//        .fixture(),
+//        .fixture(title: "skhfauhkbf", body: "kjshvhawoiyrowqgfoa", createdAt: "bsjgfuiss", user: Owner.fixture()) ]
+//}
+
+

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UXa-Wp-ha1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -8,16 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Repository View Controller-->
+        <!--Github JavaPop-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="Reposity" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="RepositoryViewController" customModule="GithubJavaPop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Reposity" title="Github JavaPop" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="RepositoryViewController" customModule="GithubJavaPop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m5S-v5-wUo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dkw-Nk-unN">
-                                <rect key="frame" x="0.0" y="98" width="414" height="798"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="132" id="1F4-ep-J78" customClass="RepositoryTableViewCell" customModule="GithubJavaPop" customModuleProvider="target">
@@ -139,23 +139,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJa-Fo-zsV">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <color key="barTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Github JavaPop" id="rqF-Jz-0kT">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" id="xN5-kK-lUP">
-                                            <connections>
-                                                <action selector="showPullRequest:" destination="BYZ-38-t0r" id="wSB-A1-gYB"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GcI-ay-CCo"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -163,17 +146,33 @@
                             <constraint firstItem="dkw-Nk-unN" firstAttribute="leading" secondItem="GcI-ay-CCo" secondAttribute="leading" id="8PK-QO-kTA"/>
                             <constraint firstItem="dkw-Nk-unN" firstAttribute="trailing" secondItem="GcI-ay-CCo" secondAttribute="trailing" id="HCT-WV-rt0"/>
                             <constraint firstAttribute="bottom" secondItem="dkw-Nk-unN" secondAttribute="bottom" id="IDo-q9-Epl"/>
-                            <constraint firstItem="TJa-Fo-zsV" firstAttribute="top" secondItem="GcI-ay-CCo" secondAttribute="top" id="K7b-db-xUC"/>
-                            <constraint firstItem="TJa-Fo-zsV" firstAttribute="leading" secondItem="GcI-ay-CCo" secondAttribute="leading" id="Nfw-HZ-OOZ"/>
-                            <constraint firstItem="dkw-Nk-unN" firstAttribute="top" secondItem="TJa-Fo-zsV" secondAttribute="bottom" constant="10" id="PWq-8K-eMM"/>
-                            <constraint firstItem="TJa-Fo-zsV" firstAttribute="trailing" secondItem="GcI-ay-CCo" secondAttribute="trailing" id="bQx-tb-cHn"/>
+                            <constraint firstItem="dkw-Nk-unN" firstAttribute="top" secondItem="GcI-ay-CCo" secondAttribute="top" id="sP3-To-djK"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="kZE-ac-3vb"/>
                     <connections>
                         <outlet property="tableView" destination="dkw-Nk-unN" id="JJE-nK-5n9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="939.13043478260875" y="83.705357142857139"/>
+        </scene>
+        <!--Github JavaPop-->
+        <scene sceneID="5Zq-s0-lPf">
+            <objects>
+                <navigationController title="Github JavaPop" automaticallyAdjustsScrollViewInsets="NO" id="UXa-Wp-ha1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QT6-Jj-Zmu">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="RT4-2B-x3y"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HBP-ba-gK3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="28.985507246376812" y="83.705357142857139"/>
         </scene>

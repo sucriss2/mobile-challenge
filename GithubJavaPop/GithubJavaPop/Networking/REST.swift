@@ -73,9 +73,6 @@ struct REST {
         }
         dataTask.resume()
     }
-
-    
-   
     
 }
  
