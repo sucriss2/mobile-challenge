@@ -8,7 +8,6 @@
 import UIKit
 import SafariServices
 
-
 class PullRequestViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -24,7 +23,6 @@ class PullRequestViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         model?.fetchPullRequests()
-        
     }    
 }
 
@@ -41,6 +39,7 @@ extension PullRequestViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? PullRequestTableViewCell else {
             fatalError()
         }
+        
         let pullRequest = pullRequests[indexPath.row]
         cell.prepare(model: pullRequest)
         return cell
@@ -76,7 +75,7 @@ extension PullRequestViewController: UITableViewDelegate {
         }
         
         let pullRequestViewController = SFSafariViewController(url: URL)
-               navigationController?.pushViewController(pullRequestViewController, animated: true)
-               print(pullRequests[indexPath.row].htmlUrl)
+        navigationController?.pushViewController(pullRequestViewController, animated: true)
+        print(pullRequests[indexPath.row].htmlUrl)
     }
 }

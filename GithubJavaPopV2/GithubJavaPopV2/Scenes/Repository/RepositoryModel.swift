@@ -26,12 +26,11 @@ class RepositoryModel {
             self?.repositories = repositories?.items ?? []
             self?.delegate?.didUpdateRepositories()
         }
-        
     }
     
 }
 
-
+#if DEBUG
 private func mockRepository() -> [Repository] {
     return [
         .fixture(),
@@ -39,3 +38,4 @@ private func mockRepository() -> [Repository] {
         .fixture(name: "joao", description: "kskjfhsi7tsegkfsge77trgao", stargazersCount: 23, forks: 23, owner: .fixture())
     ]
 }
+#endif

@@ -41,11 +41,7 @@ class PullRequestModel {
 private func mockPullRequeste() -> [PullRequest] {
     return [
         .fixture(),
-        .fixture(),
         .fixture(title: "terminating with uncaught e", body: "no segue with identifier PullRequestViewController terminating with uncaught exception of type NSException CoreSimulator 783.5 - Device: iPhone 11", user: Owner.fixture(), createdAt: "24-23-2020"),
-        .fixture(),
-        .fixture(),
-        .fixture(),
         .fixture()
     ]
 }

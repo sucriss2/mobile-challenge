@@ -56,7 +56,6 @@ extension RepositoryViewController: RepositoryModelDelegate {
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()
         }
-       
     }
 }
 
